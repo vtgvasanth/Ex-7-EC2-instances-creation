@@ -1,61 +1,53 @@
-# EC2-instances-creation
+# EC2 Instance Creation
 
-In this lab, we are going to be introduced to one of the famous Cloud Service providers, Amazon Web Services (AWS). We will work on Amazon Simple Storage Service (S3), which provides storage through web service interfaces (REST, SOAP, and BitTorrent). In S3, the data is stored in the form of buckets. Buckets serve as root folders where we can add, create, or upload files and folders. We can create multiple buckets for different purposes, and each bucket can have different access control policies.
+## **Aim**
+To set up and launch an Amazon EC2 instance, providing on-demand computing services with flexible configurations for application deployment.
+
+## **Objectives**
+1. **Log into AWS**: Access the AWS Management Console to create and manage resources.
+2. **Launch EC2 Instance**: Configure the required instance parameters, including OS, storage, instance type, and network settings.
+3. **Create Key Pair**: Generate a secure SSH key pair for EC2 access.
+4. **Configure Network**: Adjust the instance’s VPC, subnets, and security groups as needed.
+5. **Connect to Instance**: Use SSH to establish a connection to the EC2 instance.
+6. **Automate EC2 Instance Creation**: Set up an Ansible playbook to automate the instance setup.
+7. **Monitor Instance State**: Track instance states (running, stopped, terminated) and utilize AWS CloudWatch for performance monitoring.
+
+---
+
+## **Instructions**
+
+### Step 1: Log into AWS Account
+   - Open the AWS console and select **EC2** under **Services**.
+
+![vcc1](https://github.com/user-attachments/assets/44fa39e0-9b38-4e17-9c7a-c20a1a99170e)
 
 
+### Step 2: Launch an Instance
+   - Click on **Launch Instance** and configure **AMI** (Amazon Machine Image) and **Instance Type** (e.g., `t2.micro` for free tier).
 
-## Objectives
+![vcc2](https://github.com/user-attachments/assets/613ba8f0-872e-4d7d-95bd-c93c56afd5fe)
 
-- Create a Bucket in Amazon S3.
-- Add Objects (files and folders) to the bucket.
-- Access, move, download, and delete the objects.
-- Delete the Bucket.
 
-## Illustration
+### Step 3: Create Key Pair
+   - Generate a **key pair** in `.pem` format, which will be downloaded for SSH access.
 
-### Step 1: Choose S3 Service
+![vcc3](https://github.com/user-attachments/assets/c0910ce1-5909-4a53-8be9-3498eee43d02)
 
-Choose the S3 service from the list of services provided by AWS.
 
-![Screenshot 12](link-to-screenshot-12)
+### Step 4: Configure Network and Storage
+   - Keep **network settings** default, or customize for VPC, subnets, and security groups.
+   - Choose the **EBS storage** (up to 30 GB free for eligible free-tier accounts).
 
-### Step 2: Create a Unique Bucket
+![vcc4](https://github.com/user-attachments/assets/c0656c11-7fa4-4714-9004-17f64b7cf360)
 
-After selecting the S3 service, click on the "Create Bucket" button on the page. The bucket name must be unique, contain no uppercase letters, and have no special characters. If you enter any of these, an error will display, preventing the bucket from being created.
 
-![Screenshot 13](link-to-screenshot-13)
-![Screenshot 14](link-to-screenshot-14)
-![Screenshot 15](link-to-screenshot-15)
-![Screenshot 16](link-to-screenshot-16)
-![Screenshot 17](link-to-screenshot-17)
+### Step 5: Launch and Connect
+   - Confirm configurations and click **Launch Instance**.
+   - Connect to the instance using SSH from your terminal with the downloaded key pair.
 
-For region selection, choose a region from the available list. It is recommended to select a region nearby your location for higher availability. In this lab, I selected Sydney, as it is near my country, New Zealand. Remember to provide a unique bucket name with no special characters or uppercase letters.
+![vcc5](https://github.com/user-attachments/assets/f59100ed-1281-46c2-a8ea-ee1927d5c0e5)
 
-### Step 3: Upload Files to the Bucket
 
-Now, I have uploaded some files into the bucket I just created. There are no restrictions on uploading file types, but the size of each file must be less than 5 terabytes.
+## **Results**
 
-![Screenshot 19](link-to-screenshot-19)
-![Screenshot 20](link-to-screenshot-20)
-
-You can upload files of any extension, folders, and subfolders. The images below explain that you can drag and drop files or select them from your computer. After uploading a file, you can download, cut, copy, make it public, rename, or delete it. Making a file public means everyone can access it, and you will receive a link (e.g., `https://s3-ap-southeast-2.amazonaws.com/...`) to share it.
-
-![Screenshot 22](link-to-screenshot-22)
-![Screenshot 23](link-to-screenshot-23)
-
-### Step 4: Upload a Folder
-
-You can also upload a folder to the bucket. If your local folder contains subfolders and data, all data inside the parent folder will be uploaded. The images below show how to upload a folder by dragging and dropping or browsing.
-
-![Screenshot 25](link-to-screenshot-25)
-
-### Step 5: Delete the Bucket
-
-To delete a bucket, you must retype the bucket name. This policy is implemented by Amazon to confirm your action because deleting a bucket can remove large amounts of data.
-
-![Screenshot 28](link-to-screenshot-28)
-![Screenshot 29](link-to-screenshot-29)
-
-## Conclusion
-
-This lab provided an introduction to using Amazon S3 for cloud storage, including creating buckets, uploading files and folders, managing objects, and deleting buckets.
+Successfully created the Elastic Compute Cloud (EC2) instances in this lab.
