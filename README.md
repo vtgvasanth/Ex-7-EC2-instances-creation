@@ -11,7 +11,7 @@ To set up and launch an Amazon EC2 instance, providing on-demand computing servi
 5. **Connect to Instance**: Use SSH to establish a connection to the EC2 instance.
 6. **Automate EC2 Instance Creation**: Set up an Ansible playbook to automate the instance setup.
 7. **Monitor Instance State**: Track instance states (running, stopped, terminated) and utilize AWS CloudWatch for performance monitoring.
-
+ 
 ---
 
 ## **Instructions**
